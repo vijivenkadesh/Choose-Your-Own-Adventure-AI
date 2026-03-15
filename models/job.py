@@ -1,8 +1,7 @@
-from sqlalchemy import Column, Integer, String, DateTime, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.sql import func
 
 from db.database import Base
-
 
 
 class StoryJob(Base):
@@ -14,6 +13,6 @@ class StoryJob(Base):
     theme = Column(String)
     status = Column(String)
     story_id = Column(Integer, nullable=True)
-    error = Column(Integer, nullable=True)
+    error = Column(String, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     completed_at = Column(DateTime(timezone=True), nullable=True)
